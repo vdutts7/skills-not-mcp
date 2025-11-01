@@ -1,0 +1,15 @@
+#!/bin/bash
+# Auto-prompt to set email on checkout if not set correctly
+
+EMAIL=$(git config user.email 2>/dev/null)
+ALLOWED=("github.relock416@passmail.net" "me@vd7.io")
+
+for a in "${ALLOWED[@]}"; do
+    [[ "$EMAIL" == "$a" ]] && exit 0
+done
+
+echo ""
+echo "⚠ Git email not set. Pick one:"
+echo "  git config user.email 'github.relock416@passmail.net'"
+echo "  git config user.email 'me@vd7.io'"
+echo ""
