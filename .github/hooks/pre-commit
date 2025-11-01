@@ -1,0 +1,6 @@
+#!/bin/bash
+EMAIL=$(git config user.email)
+ALLOWED=("github.relock416@passmail.net" "me@vd7.io")
+for a in "${ALLOWED[@]}"; do [[ "$EMAIL" == "$a" ]] && exit 0; done
+echo "❌ Run: .github/scripts/setup.sh"
+exit 1

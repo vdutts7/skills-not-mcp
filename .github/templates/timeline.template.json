@@ -1,0 +1,10 @@
+{
+  "project": {
+    "id": "PROJECT_ID",
+    "name": "PROJECT_NAME",
+    "status": "NOT_STARTED",
+    "created_at": "YYYY-MM-DDTHH:MM:SS-08:00"
+  },
+  "events": [],
+  "timeline_summary": {"total_events": 0}
+}
