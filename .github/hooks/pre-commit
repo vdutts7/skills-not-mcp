@@ -1,18 +1,27 @@
 #!/bin/bash
-# Blocks commits if email not in allowed list
-# Works on ANY machine - no external dependencies
+# Blocks commits if email not in allowed list (reads from repo.config.json)
 
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"
+CONFIG="$ROOT/repo.config.json"
 EMAIL=$(git config user.email)
-ALLOWED=("github.relock416@passmail.net" "me@vd7.io")
 
-for a in "${ALLOWED[@]}"; do
-    [[ "$EMAIL" == "$a" ]] && exit 0
-done
+# Read allowed emails from config
+if [[ -f "$CONFIG" ]] && command -v jq &>/dev/null; then
+    ALLOWED=$(jq -r '.allowed_emails[]' "$CONFIG" 2>/dev/null)
+else
+    # Fallback if no jq or config
+    ALLOWED="github.relock416@passmail.net
+me@vd7.io"
+fi
+
+echo "$ALLOWED" | grep -qx "$EMAIL" && exit 0
 
 echo ""
 echo "❌ BLOCKED: $EMAIL not allowed"
 echo ""
-echo "Fix: git config user.email 'github.relock416@passmail.net'"
-echo " or: git config user.email 'me@vd7.io'"
+echo "Allowed emails (from repo.config.json):"
+echo "$ALLOWED" | sed 's/^/  /'
+echo ""
+echo "Fix: git config user.email '<one of the above>'"
 echo ""
 exit 1
