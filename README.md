@@ -1,17 +1,19 @@
 <div align="center">
 
+<!-- ICONS: Add your icons here, hosted on Cloudinary or use relative paths -->
+<!-- <img src="assets/icons/icon1.png" alt="logo" width="80" height="80" /> -->
+<!-- <img src="assets/icons/icon2.png" alt="logo" width="80" height="80" /> -->
+
 <h1 align="center">PROJECT_NAME</h1>
-<p align="center"><i><b>One-liner description</b></i></p>
+<p align="center"><i><b>One-liner description here.</b></i></p>
 
 [![Github][github]][github-url]
 
+<img src="assets/social-preview.png" />
+
 </div>
 
-## Quick Start
-
-```bash
-.github/scripts/setup.sh
-```
+<br/>
 
 ## Table of Contents
 
@@ -22,6 +24,8 @@
     <a href="#tools-used">🔧 Tools used</a><br/>
     <a href="#contact">👤 Contact</a>
 </ol>
+
+<br/>
 
 ## 📝About
 
@@ -47,9 +51,10 @@ cd PROJECT_NAME
 [![Email][email]][email-url]
 [![Twitter][twitter]][twitter-url]
 
+<!-- BADGES -->
 [example-badge]: https://img.shields.io/badge/Example-000000?style=for-the-badge
 [example-url]: https://example.com
-[github]: https://img.shields.io/badge/💻Github-000000?style=for-the-badge
+[github]: https://img.shields.io/badge/💻_Github-000000?style=for-the-badge
 [github-url]: https://github.com/vdutts7/PROJECT_NAME
 [email]: https://img.shields.io/badge/me@vd7.io-FFCA28?style=for-the-badge&logo=Gmail&logoColor=00bbff&color=black
 [email-url]: #
