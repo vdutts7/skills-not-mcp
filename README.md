@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- ICONS: Add your icons here, hosted on Cloudinary or use relative paths -->
+<!-- ICONS: Add your icons here -->
 <!-- <img src="assets/icons/icon1.png" alt="logo" width="80" height="80" /> -->
 <!-- <img src="assets/icons/icon2.png" alt="logo" width="80" height="80" /> -->
 
@@ -34,8 +34,8 @@ Brief description.
 ## 💻How to build
 
 ```bash
-git clone https://github.com/vdutts7/PROJECT_NAME.git
-cd PROJECT_NAME
+git clone <REPO_URL>
+cd <REPO_NAME>
 ```
 
 ## 🚀Next steps
@@ -51,12 +51,12 @@ cd PROJECT_NAME
 [![Email][email]][email-url]
 [![Twitter][twitter]][twitter-url]
 
-<!-- BADGES -->
+<!-- BADGES - UPDATE THESE -->
 [example-badge]: https://img.shields.io/badge/Example-000000?style=for-the-badge
 [example-url]: https://example.com
 [github]: https://img.shields.io/badge/💻_Github-000000?style=for-the-badge
-[github-url]: https://github.com/vdutts7/PROJECT_NAME
-[email]: https://img.shields.io/badge/me@vd7.io-FFCA28?style=for-the-badge&logo=Gmail&logoColor=00bbff&color=black
+[github-url]: #
+[email]: https://img.shields.io/badge/Email-000000?style=for-the-badge&logo=Gmail&logoColor=white
 [email-url]: #
-[twitter]: https://img.shields.io/badge/Twitter-FFCA28?style=for-the-badge&logo=Twitter&logoColor=00bbff&color=black
-[twitter-url]: https://twitter.com/vdutts7/
+[twitter]: https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=Twitter&logoColor=white
+[twitter-url]: #
