@@ -1,0 +1,45 @@
+# .cursorignore template
+# Copy to project root as: .cursorignore
+
+# Other agentic IDEs
+.codeium/
+.windsurf/
+.qoder/
+.antigravity/
+.gemini/
+.agy/
+.claude/
+.codex/
+.warp/
+.zed/
+.kiro/
+.trae/
+.pear/
+.grok/
+.copilot/
+.void-editor/
+.clinerules/
+.cline/
+.roo*
+
+# Other agentic CLIs
+.qwen/
+.opencode/
+.claudecode/
+.amp/
+.sourcegraph/
+.kilo/
+.kilocode/
+.traycer/
+.coderabbit/
+.codestral/
+.deepseek/
+.minimax/
+.zai/
+.conductor/
+.amazonq/
+.codewhisperer/
+
+# Vibecoding platforms
+.v0/
+.lovable/

@@ -1,0 +1,19 @@
+# .cursorrules template
+# Copy to project root as: .cursorrules
+
+You are an expert developer working on this project.
+
+## Project Context
+- Language: 
+- Framework: 
+- Key dependencies: 
+
+## Code Style
+- Follow existing patterns in codebase
+- Keep changes minimal and focused
+- No unnecessary refactoring
+
+## Rules
+- Never delete files, move to /tmp/_deleteme/
+- Always explain changes concisely
+- Test before committing
