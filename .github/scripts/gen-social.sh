@@ -13,8 +13,13 @@ mkdir -p "$ROOT/assets"
 TITLE=$(jq -r '.social_preview.title // .repo.name' "$CONFIG" 2>/dev/null)
 [[ -z "$TITLE" || "$TITLE" == "null" ]] && TITLE="PROJECT_NAME"
 
-# Create background
-magick -size 1280x640 canvas:'rgb(224,224,224)' PNG24:/tmp/bg.png
+# Use bg.png if exists, otherwise solid gray
+BG="$ROOT/assets/bg.png"
+if [[ -f "$BG" ]]; then
+    magick "$BG" -resize 1280x640! PNG24:/tmp/bg.png
+else
+    magick -size 1280x640 canvas:'rgb(224,224,224)' PNG24:/tmp/bg.png
+fi
 
 # Collect icons
 shopt -s nullglob
