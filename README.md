@@ -1,15 +1,14 @@
 <div align="center">
 
-<!-- ICONS: Add your icons here -->
-<!-- <img src="assets/icons/icon1.png" alt="logo" width="80" height="80" /> -->
-<!-- <img src="assets/icons/icon2.png" alt="logo" width="80" height="80" /> -->
+<img src="https://res.cloudinary.com/ddyc1es5v/image/upload/v1768050242/gh-repos/PROJECT_NAME/code.png" alt="logo" width="80" height="80" />
+<img src="https://res.cloudinary.com/ddyc1es5v/image/upload/v1768050244/gh-repos/PROJECT_NAME/github.png" alt="logo" width="80" height="80" />
 
 <h1 align="center">PROJECT_NAME</h1>
 <p align="center"><i><b>One-liner description here.</b></i></p>
 
 [![Github][github]][github-url]
 
-<img src="assets/social-preview.png" />
+<img src="https://res.cloudinary.com/ddyc1es5v/image/upload/v1768050244/gh-repos/PROJECT_NAME/social-preview.png" />
 
 </div>
 
