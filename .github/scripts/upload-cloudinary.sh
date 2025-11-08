@@ -1,0 +1,73 @@
+#!/bin/bash
+# upload-cloudinary.sh - Upload assets to Cloudinary
+# Reads config from repo.config.json, uploads icons + social preview
+
+ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+CONFIG="$ROOT/repo.config.json"
+ICONS_DIR="$ROOT/assets/icons"
+SOCIAL="$ROOT/assets/social-preview.png"
+
+# Read Cloudinary config
+CLOUD_NAME=$(jq -r '.cloudinary.cloud_name // empty' "$CONFIG" 2>/dev/null)
+UPLOAD_PRESET=$(jq -r '.cloudinary.upload_preset // empty' "$CONFIG" 2>/dev/null)
+REPO_NAME=$(jq -r '.repo.name // "project"' "$CONFIG" 2>/dev/null)
+
+if [[ -z "$CLOUD_NAME" || -z "$UPLOAD_PRESET" ]]; then
+    echo "❌ Cloudinary not configured in repo.config.json"
+    echo "   Add: cloudinary.cloud_name and cloudinary.upload_preset"
+    exit 1
+fi
+
+UPLOAD_URL="https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload"
+
+upload_file() {
+    local file="$1"
+    local public_id="$2"
+    
+    RESPONSE=$(curl -sf -X POST "$UPLOAD_URL" \
+        -F "file=@$file" \
+        -F "upload_preset=$UPLOAD_PRESET" \
+        -F "public_id=$public_id" \
+        -F "folder=gh-repos/$REPO_NAME")
+    
+    if [[ $? -eq 0 ]]; then
+        URL=$(echo "$RESPONSE" | jq -r '.secure_url')
+        echo "$URL"
+    else
+        echo ""
+    fi
+}
+
+echo "→ Uploading to Cloudinary ($CLOUD_NAME)..."
+
+# Upload icons
+if [[ -d "$ICONS_DIR" ]]; then
+    shopt -s nullglob
+    for icon in "$ICONS_DIR"/*.{png,svg,jpg}; do
+        [[ -f "$icon" ]] || continue
+        NAME=$(basename "$icon" | sed 's/\.[^.]*$//')
+        echo -n "  $NAME... "
+        URL=$(upload_file "$icon" "$NAME")
+        if [[ -n "$URL" ]]; then
+            echo "✓ $URL"
+        else
+            echo "✗ failed"
+        fi
+    done
+    shopt -u nullglob
+fi
+
+# Upload social preview
+if [[ -f "$SOCIAL" ]]; then
+    echo -n "  social-preview... "
+    URL=$(upload_file "$SOCIAL" "social-preview")
+    if [[ -n "$URL" ]]; then
+        echo "✓ $URL"
+    else
+        echo "✗ failed"
+    fi
+fi
+
+echo "✓ Done"
+echo ""
+echo "Base URL: https://res.cloudinary.com/$CLOUD_NAME/image/upload/gh-repos/$REPO_NAME/"

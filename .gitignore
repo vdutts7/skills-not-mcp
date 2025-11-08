@@ -62,3 +62,8 @@ _artifacts/
 _plans/
 *.timeline.json
 !.github/templates/timeline.template.json
+
+# Assets (uploaded to Cloudinary, not committed)
+assets/icons/*
+!assets/icons/.gitkeep
+assets/social-preview.png
