@@ -53,8 +53,8 @@ cd <REPO_NAME>
 <!-- BADGES - UPDATE THESE -->
 [example-badge]: https://img.shields.io/badge/Example-000000?style=for-the-badge
 [example-url]: https://example.com
-[github]: https://img.shields.io/badge/💻_Github-000000?style=for-the-badge
-[github-url]: #
+[github]: https://img.shields.io/badge/💻_PROJECT__NAME-000000?style=for-the-badge
+[github-url]: https://github.com/GITHUB_USERNAME/PROJECT_NAME
 [email]: https://img.shields.io/badge/Email-000000?style=for-the-badge&logo=Gmail&logoColor=white
 [email-url]: #
 [twitter]: https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=Twitter&logoColor=white
