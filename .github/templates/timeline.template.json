@@ -1,10 +1,180 @@
 {
-  "project": {
-    "id": "PROJECT_ID",
-    "name": "PROJECT_NAME",
-    "status": "NOT_STARTED",
-    "created_at": "YYYY-MM-DDTHH:MM:SS-08:00"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "timeline.schema.json",
+  "title": "Project Timeline Schema",
+  "description": "Comprehensive timeline tracking for projects, incidents, sprints, and sessions",
+
+  "_template_instructions": {
+    "usage": "Copy this file to your project root as timeline.json or <project>.timeline.json",
+    "required_fields": ["meta", "status", "entries"],
+    "optional_sections": ["goal", "current_state", "tasks", "entities", "links", "decisions", "learnings"],
+    "naming_convention": "<project-name>.timeline.json or timeline.json"
   },
-  "events": [],
-  "timeline_summary": {"total_events": 0}
+
+  "meta": {
+    "version": "1.0",
+    "session_id": "PROJECT_NAME-YYYY-MM",
+    "created": "YYYY-MM-DDTHH:MM:SSZ",
+    "last_updated": "YYYY-MM-DDTHH:MM:SSZ",
+    "last_updated_by": {
+      "whoami": "",
+      "hostname": "",
+      "branch": "",
+      "remote_branch": ""
+    },
+    "contributors": {}
+  },
+
+  "status": "NOT_STARTED",
+  "_status_enum": ["NOT_STARTED", "ACTIVE", "BLOCKED", "COMPLETED", "ARCHIVED"],
+
+  "goal": {
+    "primary": "",
+    "requirements": [],
+    "constraints": [],
+    "success_criteria": []
+  },
+
+  "current_state": {
+    "summary": "",
+    "working": [],
+    "blocked": [],
+    "next_step": "",
+    "completed_today": []
+  },
+
+  "sprint": {
+    "_description": "Optional - for sprint-based work tracking",
+    "id": "",
+    "name": "",
+    "start": "YYYY-MM-DD",
+    "end": "YYYY-MM-DD",
+    "url": ""
+  },
+
+  "deadlines": {
+    "_description": "Key dates as key-value pairs",
+    "example_deadline": "YYYY-MM-DD"
+  },
+
+  "tasks": {
+    "_description": "Task tracking by ID",
+    "TASK-ID": {
+      "name": "",
+      "priority": "PRIMARY|SECONDARY|BACKGROUND",
+      "status": "Open|In Progress|Blocked|Done",
+      "workflow": "Planning|Implementation|Review|Deployed",
+      "created": "YYYY-MM-DDTHH:MM:SSZ",
+      "updated": "YYYY-MM-DDTHH:MM:SSZ",
+      "blockers": {
+        "current": "",
+        "resolved": []
+      },
+      "artifacts": {},
+      "notes": ""
+    }
+  },
+
+  "entities": {
+    "_description": "Key identifiers, accounts, resources referenced",
+    "example_id": "",
+    "example_account": "",
+    "example_resource": {}
+  },
+
+  "links": {
+    "_description": "Categorized external links",
+    "docs": {},
+    "code": {},
+    "tickets": {},
+    "dashboards": {},
+    "meetings": {}
+  },
+
+  "entries": [
+    {
+      "_description": "Timeline entries - the core event log",
+      "timestamp": "YYYY-MM-DDTHH:MM:SSZ",
+      "date": "YYYY-MM-DD",
+      "time": "HH:MM",
+      "event_type": "milestone|task|blocker|decision|incident|note|meeting|session_start|session_end",
+      "description": "",
+      "impact": "",
+      "significance_score": 0,
+      "_significance_range": "0-100, where 100 is critical",
+      "tags": [],
+      "files_created": [],
+      "files_modified": [],
+      "context": {},
+      "chat_prompt_id": null,
+      "snippet_file": ""
+    }
+  ],
+
+  "sessions": {
+    "_description": "Session-based work logs (optional alternative to entries)",
+    "session_YYYY_MM_DD": {
+      "timestamp": "YYYY-MM-DDTHH:MM:SS-08:00",
+      "whoami": "",
+      "branch": "",
+      "summary": "",
+      "events": [],
+      "completed": [],
+      "blockers_discovered": [],
+      "decisions_made": []
+    }
+  },
+
+  "decisions": {
+    "_description": "Architectural and strategic decisions",
+    "DECISION_ID": {
+      "timestamp": "YYYY-MM-DDTHH:MM:SSZ",
+      "type": "ARCHITECTURAL_DECISION|STRATEGY|PIVOT",
+      "severity": "LOW|MEDIUM|HIGH|CRITICAL",
+      "title": "",
+      "context": {
+        "problem": "",
+        "options_considered": []
+      },
+      "decision": {
+        "chosen": "",
+        "rationale": []
+      },
+      "implications": {
+        "immediate": [],
+        "future": []
+      }
+    }
+  },
+
+  "incidents": {
+    "_description": "Incident tracking and post-mortems",
+    "incident_id": {
+      "timestamp": "YYYY-MM-DDTHH:MM:SSZ",
+      "severity": "SEV1|SEV2|SEV3|SEV4",
+      "title": "",
+      "root_cause": "",
+      "impact": "",
+      "resolution": "",
+      "prevention_measures": [],
+      "lessons_learned": []
+    }
+  },
+
+  "learnings": {
+    "_description": "Key insights and patterns discovered",
+    "patterns_that_worked": {},
+    "anti_patterns_discovered": {},
+    "tools_created": [],
+    "principles_validated": [],
+    "principles_violated": []
+  },
+
+  "timeline_summary": {
+    "total_entries": 0,
+    "critical_events": 0,
+    "blockers_resolved": 0,
+    "decisions_made": 0,
+    "artifacts_created": 0
+  }
 }
