@@ -1,47 +1,12 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Timeline Schema",
-  "description": "Flexible timeline tracking for any project. Add/remove fields as needed.",
-
+  "_": "Timeline - track anything. Add/remove/rename any field. AI will adapt.",
+  
   "meta": {
-    "version": "1.0",
     "created": "",
-    "last_updated": "",
-    "updated_by": ""
+    "updated": ""
   },
 
   "status": "",
-  "_status_examples": ["not_started", "active", "blocked", "completed", "archived"],
 
-  "goal": {
-    "primary": "",
-    "requirements": [],
-    "constraints": []
-  },
-
-  "current_state": {
-    "summary": "",
-    "working": [],
-    "blocked": [],
-    "next_step": ""
-  },
-
-  "entries": [
-    {
-      "timestamp": "",
-      "type": "",
-      "_type_examples": ["milestone", "task", "blocker", "decision", "note", "incident"],
-      "description": "",
-      "tags": []
-    }
-  ],
-
-  "tasks": {},
-  "links": {},
-  "decisions": {},
-  "learnings": {},
-
-  "_custom": {
-    "_description": "Add your own fields here"
-  }
+  "entries": []
 }
