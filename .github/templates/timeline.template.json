@@ -1,12 +1,27 @@
 {
-  "_": "Timeline - track anything. Add/remove/rename any field. AI will adapt.",
-  
+  "_": "Timeline - your project's memory. AI will extend this as you work.",
+
   "meta": {
     "created": "",
-    "updated": ""
+    "updated": "",
+    "author": ""
   },
 
-  "status": "",
+  "status": "active",
 
-  "entries": []
+  "goal": "",
+
+  "entries": [
+    {
+      "ts": "",
+      "type": "start",
+      "note": ""
+    }
+  ],
+
+  "decisions": [],
+
+  "blockers": [],
+
+  "learnings": []
 }
