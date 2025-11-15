@@ -1,5 +1,6 @@
 #!/bin/bash
 # Blocks commits if email not in allowed list (reads from repo.config.json)
+# If allowed_emails is empty, skip check (user hasn't configured yet)
 
 ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"
 CONFIG="$ROOT/repo.config.json"
@@ -9,10 +10,12 @@ EMAIL=$(git config user.email)
 if [[ -f "$CONFIG" ]] && command -v jq &>/dev/null; then
     ALLOWED=$(jq -r '.allowed_emails[]' "$CONFIG" 2>/dev/null)
 else
-    # Fallback if no jq or config
-    ALLOWED="github.relock416@passmail.net
-me@vd7.io"
+    # No config or jq - skip check
+    exit 0
 fi
+
+# If no emails configured, skip check
+[[ -z "$ALLOWED" ]] && exit 0
 
 echo "$ALLOWED" | grep -qx "$EMAIL" && exit 0
 
