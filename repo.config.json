@@ -1,0 +1,32 @@
+{
+  "repo": {
+    "name": "PROJECT_NAME",
+    "description": "One-liner description",
+    "homepage": "",
+    "topics": []
+  },
+  "owner": {
+    "github_username": "",
+    "website": "",
+    "twitter": ""
+  },
+  "allowed_emails": [],
+  "social_preview": {
+    "title": "PROJECT_NAME",
+    "icons_dir": "assets/icons",
+    "icon_creator": "https://vd7.dev/icon-creator",
+    "dimensions": {
+      "width": 1280,
+      "height": 640
+    }
+  },
+  "cloudinary": {
+    "_setup": "Create free account at cloudinary.com, then Settings > Upload > Add unsigned preset",
+    "cloud_name": "",
+    "upload_preset": ""
+  },
+  "workflows": {
+    "auto_share_to_main": false,
+    "main_account": ""
+  }
+}
