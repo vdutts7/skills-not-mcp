@@ -1,20 +1,24 @@
 #!/bin/bash
 # upload-cloudinary.sh - Upload assets to Cloudinary
-# Reads config from repo.config.json, uploads icons + social preview
+# Reads from env vars (CLOUDINARY_CLOUD_NAME, CLOUDINARY_UPLOAD_PRESET) or repo.config.json
 
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 CONFIG="$ROOT/repo.config.json"
 ICONS_DIR="$ROOT/assets/icons"
 SOCIAL="$ROOT/assets/social-preview.png"
 
-# Read Cloudinary config
-CLOUD_NAME=$(jq -r '.cloudinary.cloud_name // empty' "$CONFIG" 2>/dev/null)
-UPLOAD_PRESET=$(jq -r '.cloudinary.upload_preset // empty' "$CONFIG" 2>/dev/null)
+# Read Cloudinary config - env vars take priority
+CLOUD_NAME="${CLOUDINARY_CLOUD_NAME:-$(jq -r '.cloudinary.cloud_name // empty' "$CONFIG" 2>/dev/null)}"
+UPLOAD_PRESET="${CLOUDINARY_UPLOAD_PRESET:-$(jq -r '.cloudinary.upload_preset // empty' "$CONFIG" 2>/dev/null)}"
 REPO_NAME=$(jq -r '.repo.name // "project"' "$CONFIG" 2>/dev/null)
 
-if [[ -z "$CLOUD_NAME" || -z "$UPLOAD_PRESET" ]]; then
-    echo "❌ Cloudinary not configured in repo.config.json"
-    echo "   Add: cloudinary.cloud_name and cloudinary.upload_preset"
+# Strip $ prefix if config has placeholder
+CLOUD_NAME="${CLOUD_NAME#\$}"
+UPLOAD_PRESET="${UPLOAD_PRESET#\$}"
+
+if [[ -z "$CLOUD_NAME" || -z "$UPLOAD_PRESET" || "$CLOUD_NAME" == "CLOUDINARY_CLOUD_NAME" ]]; then
+    echo "❌ Cloudinary not configured"
+    echo "   Set env vars: CLOUDINARY_CLOUD_NAME, CLOUDINARY_UPLOAD_PRESET"
     exit 1
 fi
 

@@ -6,11 +6,14 @@
     "topics": []
   },
   "owner": {
-    "github_username": "",
-    "website": "",
-    "twitter": ""
+    "github_username": "vdutts7",
+    "website": "https://vd7.io",
+    "twitter": "vaboratory"
   },
-  "allowed_emails": [],
+  "allowed_emails": [
+    "github.relock416@passmail.net",
+    "me@vd7.io"
+  ],
   "social_preview": {
     "title": "PROJECT_NAME",
     "icons_dir": "assets/icons",
@@ -21,12 +24,12 @@
     }
   },
   "cloudinary": {
-    "_setup": "Create free account at cloudinary.com, then Settings > Upload > Add unsigned preset",
-    "cloud_name": "",
-    "upload_preset": ""
+    "_note": "Reads from env vars: CLOUDINARY_CLOUD_NAME, CLOUDINARY_UPLOAD_PRESET",
+    "cloud_name": "$CLOUDINARY_CLOUD_NAME",
+    "upload_preset": "$CLOUDINARY_UPLOAD_PRESET"
   },
   "workflows": {
-    "auto_share_to_main": false,
-    "main_account": ""
+    "auto_share_to_main": true,
+    "main_account": "vdutts7"
   }
 }
