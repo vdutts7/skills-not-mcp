@@ -1,0 +1,256 @@
+{
+  "_meta": {
+    "_about": "Centralized model registry for SQUAD tools. Single source of truth for available models.",
+    "_structure": {
+      "providers": "API providers with their models and endpoints",
+      "ollama": "Local Ollama models with capabilities",
+      "defaults": "Default model selections per use case",
+      "aliases": "Short names mapping to full model identifiers",
+      "enabled_providers": "Toggle providers on/off - disabled providers are skipped",
+      "fallback_chain": "Order to try providers if primary fails"
+    },
+    "_usage": {
+      "get_default": "jq '.defaults.chat' $CURREGISTRY/squad/models.json",
+      "list_ollama": "jq '.ollama.models | keys' $CURREGISTRY/squad/models.json",
+      "get_provider": "jq '.providers.anthropic' $CURREGISTRY/squad/models.json",
+      "check_enabled": "jq '.enabled_providers.openai' $CURREGISTRY/squad/models.json"
+    },
+    "_version_history": {
+      "1.0": "2026-01-21 - Initial model registry for SQUAD tools",
+      "1.1": "2026-01-21 - Added enabled_providers toggle and fallback_chain"
+    }
+  },
+  "version": "1.1",
+  "updated": "2026-01-21",
+
+  "enabled_providers": {
+    "_comment": "Set to false to disable a provider. Scripts will skip disabled providers and use fallback.",
+    "anthropic": true,
+    "cerebras": true,
+    "ollama": true,
+    "openai": false,
+    "gemini": false,
+    "openrouter": false
+  },
+
+  "fallback_chain": ["anthropic", "cerebras", "ollama"],
+
+  "providers": {
+    "anthropic": {
+      "name": "Anthropic",
+      "api_base": "https://api.anthropic.com/v1",
+      "env_key": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-sonnet-4-20250514": {
+          "name": "Claude Sonnet 4",
+          "context": 200000,
+          "output": 8192,
+          "capabilities": ["chat", "code", "analysis", "vision"],
+          "cost_per_1m_input": 3.00,
+          "cost_per_1m_output": 15.00
+        },
+        "claude-opus-4-20250514": {
+          "name": "Claude Opus 4",
+          "context": 200000,
+          "output": 8192,
+          "capabilities": ["chat", "code", "analysis", "vision", "reasoning"],
+          "cost_per_1m_input": 15.00,
+          "cost_per_1m_output": 75.00
+        }
+      }
+    },
+    "openai": {
+      "name": "OpenAI",
+      "api_base": "https://api.openai.com/v1",
+      "env_key": "OPENAI_API_KEY",
+      "models": {
+        "gpt-4o": {
+          "name": "GPT-4o",
+          "context": 128000,
+          "output": 16384,
+          "capabilities": ["chat", "code", "analysis", "vision"]
+        },
+        "gpt-4o-mini": {
+          "name": "GPT-4o Mini",
+          "context": 128000,
+          "output": 16384,
+          "capabilities": ["chat", "code"]
+        },
+        "o1": {
+          "name": "o1",
+          "context": 200000,
+          "output": 100000,
+          "capabilities": ["chat", "code", "reasoning"]
+        },
+        "o3-mini": {
+          "name": "o3-mini",
+          "context": 200000,
+          "output": 100000,
+          "capabilities": ["chat", "code", "reasoning"]
+        }
+      }
+    },
+    "gemini": {
+      "name": "Google Gemini",
+      "api_base": "https://generativelanguage.googleapis.com/v1beta",
+      "env_key": "GEMINI_API_KEY",
+      "models": {
+        "gemini-2.0-flash": {
+          "name": "Gemini 2.0 Flash",
+          "context": 1000000,
+          "output": 8192,
+          "capabilities": ["chat", "code", "vision"]
+        },
+        "gemini-2.0-flash-thinking-exp": {
+          "name": "Gemini 2.0 Flash Thinking",
+          "context": 1000000,
+          "output": 8192,
+          "capabilities": ["chat", "code", "reasoning"]
+        }
+      }
+    },
+    "openrouter": {
+      "name": "OpenRouter",
+      "api_base": "https://openrouter.ai/api/v1",
+      "env_key": "OPENROUTER_API_KEY",
+      "note": "Aggregator - access many models via single API",
+      "models": {
+        "anthropic/claude-sonnet-4": {
+          "name": "Claude Sonnet 4 (via OpenRouter)",
+          "capabilities": ["chat", "code", "analysis"]
+        },
+        "google/gemini-2.0-flash-001": {
+          "name": "Gemini 2.0 Flash (via OpenRouter)",
+          "capabilities": ["chat", "code"]
+        },
+        "deepseek/deepseek-r1": {
+          "name": "DeepSeek R1",
+          "capabilities": ["chat", "code", "reasoning"]
+        }
+      }
+    },
+    "cerebras": {
+      "name": "Cerebras",
+      "api_base": "https://api.cerebras.ai/v1",
+      "env_key": "CEREBRAS_API_KEY",
+      "note": "Ultra-fast inference on specialized hardware - OpenAI-compatible API",
+      "models": {
+        "llama-3.3-70b": {
+          "name": "Llama 3.3 70B",
+          "params": "70B",
+          "capabilities": ["chat", "code", "reasoning"],
+          "use_for": ["complex_reasoning", "long_form"]
+        },
+        "llama3.1-8b": {
+          "name": "Llama 3.1 8B",
+          "params": "8B",
+          "capabilities": ["chat", "code"],
+          "use_for": ["fast_tasks", "high_throughput"]
+        },
+        "qwen-3-32b": {
+          "name": "Qwen 3 32B",
+          "params": "32B",
+          "capabilities": ["chat", "code"],
+          "use_for": ["balanced", "general_purpose"]
+        },
+        "qwen-3-235b-a22b-instruct-2507": {
+          "name": "Qwen 3 235B A22B Instruct",
+          "params": "235B",
+          "capabilities": ["chat", "code", "reasoning"],
+          "use_for": ["demanding_tasks"]
+        },
+        "gpt-oss-120b": {
+          "name": "GPT-OSS 120B",
+          "params": "120B",
+          "capabilities": ["chat", "code", "reasoning"],
+          "use_for": ["high_capacity"]
+        },
+        "zai-glm-4.7": {
+          "name": "ZAI GLM 4.7",
+          "params": "~357B",
+          "capabilities": ["chat", "code", "reasoning"],
+          "use_for": ["best_theoretical_reasoning"]
+        }
+      }
+    }
+  },
+
+  "ollama": {
+    "host": "http://localhost:11434",
+    "env_key": "OLLAMA_HOST",
+    "note": "Local models - free, private, no API key needed",
+    "models": {
+      "qwen2.5-coder:7b": {
+        "name": "Qwen 2.5 Coder 7B",
+        "params": "7B",
+        "capabilities": ["code", "chat"],
+        "use_for": ["code_review", "refactor", "debug"],
+        "recommended": true
+      },
+      "qwen:latest": {
+        "name": "Qwen Latest",
+        "params": "varies",
+        "capabilities": ["chat", "code"],
+        "use_for": ["general", "chat"]
+      },
+      "glm4:9b": {
+        "name": "GLM-4 9B",
+        "params": "9B",
+        "capabilities": ["chat", "code", "chinese"],
+        "use_for": ["general", "multilingual"]
+      },
+      "moondream:latest": {
+        "name": "Moondream",
+        "params": "1.6B",
+        "capabilities": ["vision"],
+        "use_for": ["image_analysis"]
+      },
+      "nomic-embed-text:latest": {
+        "name": "Nomic Embed Text",
+        "params": "137M",
+        "capabilities": ["embeddings"],
+        "use_for": ["semantic_search", "rag"]
+      }
+    },
+    "recommended_pulls": [
+      "deepseek-coder-v2:16b",
+      "codellama:13b",
+      "mistral:7b"
+    ]
+  },
+
+  "defaults": {
+    "chat": "claude-sonnet-4-20250514",
+    "code": "qwen2.5-coder:7b",
+    "analysis": "claude-sonnet-4-20250514",
+    "reasoning": "claude-opus-4-20250514",
+    "fast": "llama3.1-8b",
+    "local": "qwen2.5-coder:7b",
+    "vision": "claude-sonnet-4-20250514"
+  },
+
+  "aliases": {
+    "claude": "claude-sonnet-4-20250514",
+    "opus": "claude-opus-4-20250514",
+    "sonnet": "claude-sonnet-4-20250514",
+    "gpt4": "gpt-4o",
+    "gpt": "gpt-4o",
+    "gemini": "gemini-2.0-flash",
+    "qwen": "qwen2.5-coder:7b",
+    "local": "qwen2.5-coder:7b",
+    "glm": "glm4:9b",
+    "cerebras": "llama-3.3-70b",
+    "llama70b": "llama-3.3-70b",
+    "llama8b": "llama3.1-8b",
+    "fast-cerebras": "llama3.1-8b"
+  },
+
+  "detection_patterns": {
+    "anthropic": ["claude", "opus", "sonnet", "haiku"],
+    "cerebras": ["llama-3.3-70b", "llama3.1-8b", "qwen-3-32b", "qwen-3-235b-a22b-instruct-2507", "gpt-oss-120b", "zai-glm-4.7"],
+    "ollama": ["qwen", "llama", "mistral", "codellama", "deepseek-coder", "glm", "moondream", "nomic"],
+    "openai": ["gpt-", "o1", "o3"],
+    "gemini": ["gemini"],
+    "openrouter": ["/"]
+  }
+}
