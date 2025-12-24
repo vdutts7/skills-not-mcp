@@ -32,6 +32,16 @@ MCP schemas = ~500-2k tokens/tool loaded into context whether used or not. 18 to
 
 shell = 0 tokens til called
 
+**pattern:** dumb orchestrator
+```
+/chat (command)  ->  chat.sh (script)
+     │                    │
+     └── routing ────────>└── actual logic
+         ~50 tokens           0 til called
+```
+
+each `commands/*.md` = thin wrapper that calls `scripts/*.sh`
+
 ## 💻How to build
 
 ```bash
