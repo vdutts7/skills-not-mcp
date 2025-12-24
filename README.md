@@ -3,7 +3,7 @@
 <img src="assets/icons/terminal.png" alt="terminal" width="80" height="80" />
 <img src="assets/icons/mcp.png" alt="mcp" width="80" height="80" />
 
-<h1 align="center">SQUAD</h1>
+<h1 align="center">shell-vs-mcp</h1>
 <p align="center"><i><b>shell > MCP for tokens</b></i></p>
 
 [![Github][github]][github-url]
@@ -116,8 +116,8 @@ USER                    AI                      SHELL
 ## 💻How to build
 
 ```bash
-git clone https://github.com/vdutts/squad.git
-cd squad/scripts
+git clone https://github.com/vdutts/shell-vs-mcp.git
+cd shell-vs-mcp/scripts
 ```
 
 API keys:
@@ -150,14 +150,14 @@ export CEREBRAS_API_KEY="..."
 ./demo.sh
 ```
 
-| provider | models | env |
-|----------|--------|-----|
-| Anthropic | sonnet-4, opus-4 | `ANTHROPIC_API_KEY` |
-| Cerebras | llama-3.3-70b, qwen-3-32b | `CEREBRAS_API_KEY` |
-| Ollama | qwen2.5-coder, llama, mistral | local |
-| OpenAI | gpt-4o, o1, o3 | `OPENAI_API_KEY` |
-| Gemini | 2.0-flash | `GEMINI_API_KEY` |
-| OpenRouter | any | `OPENROUTER_API_KEY` |
+| | provider | models | env |
+|:---:|----------|--------|-----|
+| <img src="assets/icons/providers/anthropic.webp" width="16"> | Anthropic | sonnet-4, opus-4 | `ANTHROPIC_API_KEY` |
+| <img src="assets/icons/providers/cerebras.webp" width="16"> | Cerebras | llama-3.3-70b, qwen-3-32b | `CEREBRAS_API_KEY` |
+| <img src="assets/icons/providers/ollama.webp" width="16"> | Ollama | qwen2.5-coder, llama, mistral | local |
+| <img src="assets/icons/providers/openai.webp" width="16"> | OpenAI | gpt-4o, o1, o3 | `OPENAI_API_KEY` |
+| <img src="assets/icons/providers/gemini.webp" width="16"> | Gemini | 2.0-flash | `GEMINI_API_KEY` |
+| <img src="assets/icons/providers/openrouter.webp" width="16"> | OpenRouter | any | `OPENROUTER_API_KEY` |
 
 | approach | tokens |
 |----------|--------|
@@ -176,8 +176,8 @@ export CEREBRAS_API_KEY="..."
 [![Twitter][twitter]][twitter-url]
 
 <!-- BADGES -->
-[github]: https://img.shields.io/badge/💻_SQUAD-000000?style=for-the-badge
-[github-url]: https://github.com/vdutts/squad
+[github]: https://img.shields.io/badge/💻_shell-vs-mcp-000000?style=for-the-badge
+[github-url]: https://github.com/vdutts/shell-vs-mcp
 [zsh-badge]: https://img.shields.io/badge/Zsh-000000?style=for-the-badge&logo=gnu-bash&logoColor=white
 [zsh-url]: https://www.zsh.org/
 [jq-badge]: https://img.shields.io/badge/jq-000000?style=for-the-badge
