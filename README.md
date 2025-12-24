@@ -1,7 +1,10 @@
 <div align="center">
 
+<img src="assets/icons/terminal.png" alt="terminal" width="80" height="80" />
+<img src="assets/icons/mcp.png" alt="mcp" width="80" height="80" />
+
 <h1 align="center">SQUAD</h1>
-<p align="center"><i><b>Shell scripts > MCP for token efficiency</b></i></p>
+<p align="center"><i><b>shell > MCP for tokens</b></i></p>
 
 [![Github][github]][github-url]
 
@@ -15,7 +18,7 @@
     <a href="#about">📝 About</a><br/>
     <a href="#how-to-build">💻 How to build</a><br/>
     <a href="#usage">🚀 Usage</a><br/>
-    <a href="#tools-used">🔧 Tools used</a><br/>
+    <a href="#tools-used">🔧 Tools</a><br/>
     <a href="#contact">👤 Contact</a>
 </ol>
 
@@ -23,11 +26,11 @@
 
 ## 📝About
 
-18 MCP tools from [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) converted to shell scripts.
+18 MCP tools from [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) -> shell scripts
 
-**why:** MCP schemas load ~500-2000 tokens per tool into context window whether used or not. 18 tools = 10-30k tokens overhead before you ask anything.
+MCP schemas = ~500-2k tokens/tool loaded into context whether used or not. 18 tools = 10-30k overhead before asking anything
 
-shell scripts = 0 tokens until called.
+shell = 0 tokens til called
 
 ## 💻How to build
 
@@ -36,28 +39,28 @@ git clone https://github.com/vdutts/squad.git
 cd squad/scripts
 ```
 
-set API keys:
+API keys:
 ```bash
 export ANTHROPIC_API_KEY="sk-..."
 export CEREBRAS_API_KEY="..."
-# or use local Ollama (no key needed)
+# or local Ollama (no key)
 ```
 
 ## 🚀Usage
 
 ```bash
-# chat w/ claude
+# claude
 ./chat.sh -m claude-sonnet-4-20250514 "structure this API?"
 
-# local ollama (free/private)
-./chat.sh -m qwen2.5-coder:7b "review this function"
+# ollama (free/local)
+./chat.sh -m qwen2.5-coder:7b "review this"
 
 # file context
-./chat.sh -f src/main.py -f src/utils.py "explain data flow"
+./chat.sh -f src/main.py -f src/utils.py "explain flow"
 
 # multi-turn
-./chat.sh -c session123 "design caching layer"
-./chat.sh -c session123 "redis vs memcached?"
+./chat.sh -c sess1 "design cache"
+./chat.sh -c sess1 "redis vs memcached?"
 
 # code review
 ./codereview.sh -m llama-3.3-70b -f src/auth.py
@@ -66,27 +69,23 @@ export CEREBRAS_API_KEY="..."
 ./demo.sh
 ```
 
-**providers:**
-
-| provider | models | env var |
-|----------|--------|---------|
-| Anthropic | claude-sonnet-4, opus-4 | `ANTHROPIC_API_KEY` |
+| provider | models | env |
+|----------|--------|-----|
+| Anthropic | sonnet-4, opus-4 | `ANTHROPIC_API_KEY` |
 | Cerebras | llama-3.3-70b, qwen-3-32b | `CEREBRAS_API_KEY` |
-| Ollama | qwen2.5-coder, llama, mistral | (local) |
+| Ollama | qwen2.5-coder, llama, mistral | local |
 | OpenAI | gpt-4o, o1, o3 | `OPENAI_API_KEY` |
-| Gemini | gemini-2.0-flash | `GEMINI_API_KEY` |
+| Gemini | 2.0-flash | `GEMINI_API_KEY` |
 | OpenRouter | any | `OPENROUTER_API_KEY` |
 
-**token overhead:**
+| approach | tokens |
+|----------|--------|
+| MCP (18 tools) | ~12.5k |
+| shell | 0 til called |
 
-| approach | context cost |
-|----------|--------------|
-| MCP (18 tools) | ~12,500 tokens |
-| shell scripts | 0 until called |
+[docs/TOKEN_ANALYSIS.md](docs/TOKEN_ANALYSIS.md) + [docs/COMPARISON.md](docs/COMPARISON.md)
 
-see [docs/TOKEN_ANALYSIS.md](docs/TOKEN_ANALYSIS.md) + [docs/COMPARISON.md](docs/COMPARISON.md)
-
-## 🔧Tools Used
+## 🔧Tools
 
 [![Zsh][zsh-badge]][zsh-url]
 [![jq][jq-badge]][jq-url]
