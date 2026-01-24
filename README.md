@@ -208,7 +208,7 @@ export CEREBRAS_API_KEY="..."
 
 ## Contact
 
-[![Email][email]][email-url]
+[![Website][website]][website-url]
 [![Twitter][twitter]][twitter-url]
 
 <!-- BADGES -->
@@ -226,7 +226,7 @@ export CEREBRAS_API_KEY="..."
 [mcp-url]: https://modelcontextprotocol.io/
 [skill-badge]: https://img.shields.io/badge/SKILL.md-000000?style=for-the-badge
 [skill-url]: https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/skills
-[email]: https://img.shields.io/badge/Email-000000?style=for-the-badge&logo=Gmail&logoColor=white
-[email-url]: mailto:me@vd7.io
+[website]: https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=googlechrome&logoColor=white
+[website-url]: https://vd7.io
 [twitter]: https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=Twitter&logoColor=white
 [twitter-url]: https://x.com/vdutts7
