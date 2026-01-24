@@ -1,6 +1,7 @@
 <div align="center">
 
 <img src="assets/icons/terminal.png" alt="terminal" width="80" height="80" />
+<img src="assets/icons/skills.webp" alt="skills" width="80" height="80" />
 <img src="assets/icons/mcp.png" alt="mcp" width="80" height="80" />
 
 <h1 align="center">skills-not-mcp</h1>
