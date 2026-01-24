@@ -4,7 +4,7 @@
 <img src="assets/icons/mcp.png" alt="mcp" width="80" height="80" />
 
 <h1 align="center">shell-vs-mcp</h1>
-<p align="center"><i><b>shell > MCP for tokens</b></i></p>
+<p align="center"><i><b>80-90% fewer tokens with Skills + Shell vs MCP</b></i></p>
 
 [![Github][github]][github-url]
 
@@ -27,15 +27,24 @@
 
 ## 📝About
 
-18 MCP tools from [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) -> shell scripts
+**80-90% token savings** by replacing MCP with Skills + Shell scripts.
 
-MCP schemas = ~500-2k tokens/tool loaded into context whether used or not. 18 tools = 10-30k overhead before asking anything
+18 MCP tools from [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) converted to:
+- **Claude Skills** (`commands/*.md`) - slash command interface
+- **Shell scripts** (`scripts/*.sh`) - actual execution
 
-shell = 0 tokens til called
+| approach | tokens loaded | savings |
+|----------|---------------|---------|
+| MCP (18 tools) | ~12,500 always | baseline |
+| Skills + Shell | ~50 per call | **80-90%** |
+
+MCP loads all 18 tool schemas (~700 tokens each) into context whether you use them or not.
+
+Skills + Shell loads nothing until called - then only the output.
 
 ## ⚡Pattern
 
-**deterministic delegation**
+**Deterministic Delegation** - Skills orchestrate, Shell executes
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -47,17 +56,19 @@ shell = 0 tokens til called
 │  └────────┘ └────────┘ └────────┘ └────────┘              │
 │                                                             │
 │  COST: ~12,500 tokens ALWAYS LOADED                        │
+│  SAVINGS: 0%                                                │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
-│               DETERMINISTIC DELEGATION                      │
+│            SKILLS + SHELL (Deterministic Delegation)        │
 │                                                             │
 │  ┌────────┐                                                 │
-│  │/command│ ────> shell script ────> output                │
+│  │ /skill │ ────> shell script ────> output                │
 │  │ ~50 tok│       (external)         (only this)           │
 │  └────────┘                                                 │
 │                                                             │
 │  COST: ~50 tokens + output only                            │
+│  SAVINGS: 80-90%                                            │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -87,14 +98,14 @@ USER                    AI                      SHELL
 **layers:**
 ```
 ┌────────────────────────────────────────────────┐
-│  LAYER 1: COMMAND (orchestrator)               │
+│  LAYER 1: SKILL (orchestrator)                 │
 │  commands/*.md                                 │
-│  - routing, docs, ~50 tokens each              │
+│  - slash commands, routing, ~50 tokens each    │
 └────────────────────────────────────────────────┘
                     │ delegates to
                     ▼
 ┌────────────────────────────────────────────────┐
-│  LAYER 2: SCRIPT (execution)                   │
+│  LAYER 2: SHELL (execution)                    │
 │  scripts/*.sh                                  │
 │  - actual logic, 0 tokens til called           │
 └────────────────────────────────────────────────┘
@@ -106,11 +117,11 @@ USER                    AI                      SHELL
 └────────────────────────────────────────────────┘
 ```
 
-| property | MCP | deterministic delegation |
-|----------|-----|--------------------------|
-| schema loading | always | never |
+| property | MCP | Skills + Shell |
+|----------|-----|----------------|
+| schema loading | always (~12.5k) | never |
+| token savings | 0% | **80-90%** |
 | execution | probabilistic | deterministic |
-| context cost | O(n) tools | O(1) per call |
 | debugging | opaque | `bash -x script.sh` |
 
 ## 💻How to build
@@ -159,11 +170,6 @@ export CEREBRAS_API_KEY="..."
 | <img src="assets/icons/providers/gemini.webp" width="16"> | Gemini | 2.0-flash | `GEMINI_API_KEY` |
 | <img src="assets/icons/providers/openrouter.webp" width="16"> | OpenRouter | any | `OPENROUTER_API_KEY` |
 
-| approach | tokens |
-|----------|--------|
-| MCP (18 tools) | ~12.5k |
-| shell | 0 til called |
-
 ## 🔧Tools
 
 [![Zsh][zsh-badge]][zsh-url]
@@ -176,7 +182,7 @@ export CEREBRAS_API_KEY="..."
 [![Twitter][twitter]][twitter-url]
 
 <!-- BADGES -->
-[github]: https://img.shields.io/badge/💻_shell-vs-mcp-000000?style=for-the-badge
+[github]: https://img.shields.io/badge/💻_shell--vs--mcp-000000?style=for-the-badge
 [github-url]: https://github.com/vdutts7/shell-vs-mcp
 [zsh-badge]: https://img.shields.io/badge/Zsh-000000?style=for-the-badge&logo=gnu-bash&logoColor=white
 [zsh-url]: https://www.zsh.org/
