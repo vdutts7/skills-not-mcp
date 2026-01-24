@@ -3,7 +3,7 @@
 <img src="assets/icons/terminal.png" alt="terminal" width="80" height="80" />
 <img src="assets/icons/mcp.png" alt="mcp" width="80" height="80" />
 
-<h1 align="center">shell-vs-mcp</h1>
+<h1 align="center">skills-not-mcp</h1>
 <p align="center"><i><b>80-90% fewer tokens with Skills + Shell vs MCP</b></i></p>
 
 [![Github][github]][github-url]
@@ -127,8 +127,8 @@ USER                    AI                      SHELL
 ## 💻How to build
 
 ```bash
-git clone https://github.com/vdutts7/shell-vs-mcp.git
-cd shell-vs-mcp/scripts
+git clone https://github.com/vdutts7/skills-not-mcp.git
+cd skills-not-mcp/scripts
 ```
 
 API keys:
@@ -183,7 +183,7 @@ export CEREBRAS_API_KEY="..."
 
 <!-- BADGES -->
 [github]: https://img.shields.io/badge/💻_shell--vs--mcp-000000?style=for-the-badge
-[github-url]: https://github.com/vdutts7/shell-vs-mcp
+[github-url]: https://github.com/vdutts7/skills-not-mcp
 [zsh-badge]: https://img.shields.io/badge/Zsh-000000?style=for-the-badge&logo=gnu-bash&logoColor=white
 [zsh-url]: https://www.zsh.org/
 [jq-badge]: https://img.shields.io/badge/jq-000000?style=for-the-badge
