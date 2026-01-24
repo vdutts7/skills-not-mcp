@@ -17,6 +17,7 @@
 
 <ol>
     <a href="#about">📝 About</a><br/>
+    <a href="#conversion-table">🔄 Conversion</a><br/>
     <a href="#pattern">⚡ Pattern</a><br/>
     <a href="#how-to-build">💻 How to build</a><br/>
     <a href="#usage">🚀 Usage</a><br/>
@@ -42,6 +43,31 @@
 MCP loads all 18 tool schemas (~700 tokens each) into context whether you use them or not.
 
 Skills + Shell loads nothing until called - then only the output.
+
+## 🔄 Conversion Table
+
+| # | MCP (before) | Skill (after) | Shell (after) |
+|---|--------------|---------------|---------------|
+| 1 | `tools/chat.py` | `commands/chat.md` | `scripts/chat.sh` |
+| 2 | `tools/thinkdeep.py` | `commands/thinkdeep.md` | `scripts/thinkdeep.sh` |
+| 3 | `tools/consensus.py` | `commands/consensus.md` | `scripts/consensus.sh` |
+| 4 | `tools/codereview.py` | `commands/codereview.md` | `scripts/codereview.sh` |
+| 5 | `tools/debug.py` | `commands/debug.md` | `scripts/debug.sh` |
+| 6 | `tools/planner.py` | `commands/planner.md` | `scripts/planner.sh` |
+| 7 | `tools/analyze.py` | `commands/analyze.md` | `scripts/analyze.sh` |
+| 8 | `tools/refactor.py` | `commands/refactor.md` | `scripts/refactor.sh` |
+| 9 | `tools/testgen.py` | `commands/testgen.md` | `scripts/testgen.sh` |
+| 10 | `tools/secaudit.py` | `commands/secaudit.md` | `scripts/secaudit.sh` |
+| 11 | `tools/docgen.py` | `commands/docgen.md` | `scripts/docgen.sh` |
+| 12 | `tools/apilookup.py` | `commands/apilookup.md` | `scripts/apilookup.sh` |
+| 13 | `tools/challenge.py` | `commands/challenge.md` | `scripts/challenge.sh` |
+| 14 | `tools/tracer.py` | `commands/tracer.md` | `scripts/tracer.sh` |
+| 15 | `tools/clink.py` | `commands/clink.md` | `scripts/clink.sh` |
+| 16 | `tools/precommit.py` | `commands/precommit.md` | `scripts/precommit.sh` |
+| 17 | `tools/listmodels.py` | `commands/listmodels.md` | `scripts/listmodels.sh` |
+| 18 | `tools/version.py` | `commands/version.md` | `scripts/version.sh` |
+
+**Source:** [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server)
 
 ## ⚡Pattern
 
