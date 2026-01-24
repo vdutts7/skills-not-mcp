@@ -116,7 +116,7 @@ USER                    AI                      SHELL
 ## 💻How to build
 
 ```bash
-git clone https://github.com/vdutts/shell-vs-mcp.git
+git clone https://github.com/vdutts7/shell-vs-mcp.git
 cd shell-vs-mcp/scripts
 ```
 
@@ -177,7 +177,7 @@ export CEREBRAS_API_KEY="..."
 
 <!-- BADGES -->
 [github]: https://img.shields.io/badge/💻_shell-vs-mcp-000000?style=for-the-badge
-[github-url]: https://github.com/vdutts/shell-vs-mcp
+[github-url]: https://github.com/vdutts7/shell-vs-mcp
 [zsh-badge]: https://img.shields.io/badge/Zsh-000000?style=for-the-badge&logo=gnu-bash&logoColor=white
 [zsh-url]: https://www.zsh.org/
 [jq-badge]: https://img.shields.io/badge/jq-000000?style=for-the-badge
