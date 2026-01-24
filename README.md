@@ -226,7 +226,7 @@ export CEREBRAS_API_KEY="..."
 [mcp-url]: https://modelcontextprotocol.io/
 [skill-badge]: https://img.shields.io/badge/SKILL.md-000000?style=for-the-badge
 [skill-url]: https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/skills
-[website]: https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=googlechrome&logoColor=white
+[website]: https://img.shields.io/badge/vd7.io-000000?style=for-the-badge&logo=Safari&logoColor=white
 [website-url]: https://vd7.io
-[twitter]: https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=Twitter&logoColor=white
+[twitter]: https://img.shields.io/badge//vdutts7-000000?style=for-the-badge&logo=X&logoColor=white
 [twitter-url]: https://x.com/vdutts7
