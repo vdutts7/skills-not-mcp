@@ -183,7 +183,7 @@ export CEREBRAS_API_KEY="..."
 [![Twitter][twitter]][twitter-url]
 
 <!-- BADGES -->
-[github]: https://img.shields.io/badge/💻_shell--vs--mcp-000000?style=for-the-badge
+[github]: https://img.shields.io/badge/💻_skills--not--mcp-000000?style=for-the-badge
 [github-url]: https://github.com/vdutts7/skills-not-mcp
 [zsh-badge]: https://img.shields.io/badge/Zsh-000000?style=for-the-badge&logo=gnu-bash&logoColor=white
 [zsh-url]: https://www.zsh.org/
