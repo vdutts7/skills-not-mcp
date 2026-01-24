@@ -16,18 +16,18 @@
 ## Table of Contents
 
 <ol>
-    <a href="#about">📝 About</a><br/>
-    <a href="#conversion-table">🔄 Conversion</a><br/>
-    <a href="#pattern">⚡ Pattern</a><br/>
-    <a href="#how-to-build">💻 How to build</a><br/>
-    <a href="#usage">🚀 Usage</a><br/>
-    <a href="#tools-used">🔧 Tools</a><br/>
-    <a href="#contact">👤 Contact</a>
+    <a href="#about">About</a><br/>
+    <a href="#conversion-table">Conversion</a><br/>
+    <a href="#pattern">Pattern</a><br/>
+    <a href="#how-to-build">How to build</a><br/>
+    <a href="#usage">Usage</a><br/>
+    <a href="#tools-used">Tools</a><br/>
+    <a href="#contact">Contact</a>
 </ol>
 
 <br/>
 
-## 📝About
+## About
 
 **80-90% token savings** by replacing MCP with Skills + Shell scripts.
 
@@ -44,7 +44,7 @@ MCP loads all 18 tool schemas (~700 tokens each) into context whether you use th
 
 Skills + Shell loads nothing until called - then only the output.
 
-## 🔄 Conversion Table
+## Conversion Table
 
 | # | MCP (before) | Skill (after) | Shell (after) |
 |---|--------------|---------------|---------------|
@@ -69,7 +69,7 @@ Skills + Shell loads nothing until called - then only the output.
 
 **Source:** [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server)
 
-## ⚡Pattern
+## Pattern
 
 **Deterministic Delegation** - Skills orchestrate, Shell executes
 
@@ -151,7 +151,7 @@ USER                    AI                      SHELL
 | execution | probabilistic | deterministic |
 | debugging | opaque | `bash -x script.sh` |
 
-## 💻How to build
+## How to build
 
 ```bash
 git clone https://github.com/vdutts7/skills-not-mcp.git
@@ -165,7 +165,7 @@ export CEREBRAS_API_KEY="..."
 # or local Ollama (no key)
 ```
 
-## 🚀Usage
+## Usage
 
 ```bash
 # claude
@@ -197,19 +197,22 @@ export CEREBRAS_API_KEY="..."
 | <img src="assets/icons/providers/gemini.webp" width="16"> | Gemini | 2.0-flash | `GEMINI_API_KEY` |
 | <img src="assets/icons/providers/openrouter.webp" width="16"> | OpenRouter | any | `OPENROUTER_API_KEY` |
 
-## 🔧Tools
+## Tools
 
 [![Zsh][zsh-badge]][zsh-url]
 [![jq][jq-badge]][jq-url]
 [![curl][curl-badge]][curl-url]
+[![Claude][claude-badge]][claude-url]
+[![MCP][mcp-badge]][mcp-url]
+[![SKILL.md][skill-badge]][skill-url]
 
-## 👤Contact
+## Contact
 
 [![Email][email]][email-url]
 [![Twitter][twitter]][twitter-url]
 
 <!-- BADGES -->
-[github]: https://img.shields.io/badge/💻_skills--not--mcp-000000?style=for-the-badge
+[github]: https://img.shields.io/badge/skills--not--mcp-000000?style=for-the-badge
 [github-url]: https://github.com/vdutts7/skills-not-mcp
 [zsh-badge]: https://img.shields.io/badge/Zsh-000000?style=for-the-badge&logo=gnu-bash&logoColor=white
 [zsh-url]: https://www.zsh.org/
@@ -217,6 +220,12 @@ export CEREBRAS_API_KEY="..."
 [jq-url]: https://jqlang.github.io/jq/
 [curl-badge]: https://img.shields.io/badge/curl-000000?style=for-the-badge&logo=curl&logoColor=white
 [curl-url]: https://curl.se/
+[claude-badge]: https://img.shields.io/badge/Claude-000000?style=for-the-badge&logo=anthropic&logoColor=white
+[claude-url]: https://claude.ai/
+[mcp-badge]: https://img.shields.io/badge/MCP-000000?style=for-the-badge
+[mcp-url]: https://modelcontextprotocol.io/
+[skill-badge]: https://img.shields.io/badge/SKILL.md-000000?style=for-the-badge
+[skill-url]: https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/skills
 [email]: https://img.shields.io/badge/Email-000000?style=for-the-badge&logo=Gmail&logoColor=white
 [email-url]: mailto:me@vd7.io
 [twitter]: https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=Twitter&logoColor=white
