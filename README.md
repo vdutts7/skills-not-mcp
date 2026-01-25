@@ -46,28 +46,34 @@ Skills + Shell loads nothing until called - then only the output.
 
 ## Conversion Table
 
-| # | MCP (before) | Skill (after) | Shell (after) |
-|---|--------------|---------------|---------------|
-| 1 | `tools/chat.py` | `commands/chat.md` | `scripts/chat.sh` |
-| 2 | `tools/thinkdeep.py` | `commands/thinkdeep.md` | `scripts/thinkdeep.sh` |
-| 3 | `tools/consensus.py` | `commands/consensus.md` | `scripts/consensus.sh` |
-| 4 | `tools/codereview.py` | `commands/codereview.md` | `scripts/codereview.sh` |
-| 5 | `tools/debug.py` | `commands/debug.md` | `scripts/debug.sh` |
-| 6 | `tools/planner.py` | `commands/planner.md` | `scripts/planner.sh` |
-| 7 | `tools/analyze.py` | `commands/analyze.md` | `scripts/analyze.sh` |
-| 8 | `tools/refactor.py` | `commands/refactor.md` | `scripts/refactor.sh` |
-| 9 | `tools/testgen.py` | `commands/testgen.md` | `scripts/testgen.sh` |
-| 10 | `tools/secaudit.py` | `commands/secaudit.md` | `scripts/secaudit.sh` |
-| 11 | `tools/docgen.py` | `commands/docgen.md` | `scripts/docgen.sh` |
-| 12 | `tools/apilookup.py` | `commands/apilookup.md` | `scripts/apilookup.sh` |
-| 13 | `tools/challenge.py` | `commands/challenge.md` | `scripts/challenge.sh` |
-| 14 | `tools/tracer.py` | `commands/tracer.md` | `scripts/tracer.sh` |
-| 15 | `tools/clink.py` | `commands/clink.md` | `scripts/clink.sh` |
-| 16 | `tools/precommit.py` | `commands/precommit.md` | `scripts/precommit.sh` |
-| 17 | `tools/listmodels.py` | `commands/listmodels.md` | `scripts/listmodels.sh` |
-| 18 | `tools/version.py` | `commands/version.md` | `scripts/version.sh` |
+<table>
+<tr>
+<th>#</th>
+<th style="background-color:#ffcccb">MCP (before)</th>
+<th style="background-color:#c1e1c1">Skill (after)</th>
+<th style="background-color:#c1e1c1">Shell (after)</th>
+</tr>
+<tr><td>1</td><td style="background-color:#ffcccb"><code>tools/chat.py</code></td><td style="background-color:#c1e1c1"><code>commands/chat.md</code></td><td style="background-color:#c1e1c1"><code>scripts/chat.sh</code></td></tr>
+<tr><td>2</td><td style="background-color:#ffcccb"><code>tools/thinkdeep.py</code></td><td style="background-color:#c1e1c1"><code>commands/thinkdeep.md</code></td><td style="background-color:#c1e1c1"><code>scripts/thinkdeep.sh</code></td></tr>
+<tr><td>3</td><td style="background-color:#ffcccb"><code>tools/consensus.py</code></td><td style="background-color:#c1e1c1"><code>commands/consensus.md</code></td><td style="background-color:#c1e1c1"><code>scripts/consensus.sh</code></td></tr>
+<tr><td>4</td><td style="background-color:#ffcccb"><code>tools/codereview.py</code></td><td style="background-color:#c1e1c1"><code>commands/codereview.md</code></td><td style="background-color:#c1e1c1"><code>scripts/codereview.sh</code></td></tr>
+<tr><td>5</td><td style="background-color:#ffcccb"><code>tools/debug.py</code></td><td style="background-color:#c1e1c1"><code>commands/debug.md</code></td><td style="background-color:#c1e1c1"><code>scripts/debug.sh</code></td></tr>
+<tr><td>6</td><td style="background-color:#ffcccb"><code>tools/planner.py</code></td><td style="background-color:#c1e1c1"><code>commands/planner.md</code></td><td style="background-color:#c1e1c1"><code>scripts/planner.sh</code></td></tr>
+<tr><td>7</td><td style="background-color:#ffcccb"><code>tools/analyze.py</code></td><td style="background-color:#c1e1c1"><code>commands/analyze.md</code></td><td style="background-color:#c1e1c1"><code>scripts/analyze.sh</code></td></tr>
+<tr><td>8</td><td style="background-color:#ffcccb"><code>tools/refactor.py</code></td><td style="background-color:#c1e1c1"><code>commands/refactor.md</code></td><td style="background-color:#c1e1c1"><code>scripts/refactor.sh</code></td></tr>
+<tr><td>9</td><td style="background-color:#ffcccb"><code>tools/testgen.py</code></td><td style="background-color:#c1e1c1"><code>commands/testgen.md</code></td><td style="background-color:#c1e1c1"><code>scripts/testgen.sh</code></td></tr>
+<tr><td>10</td><td style="background-color:#ffcccb"><code>tools/secaudit.py</code></td><td style="background-color:#c1e1c1"><code>commands/secaudit.md</code></td><td style="background-color:#c1e1c1"><code>scripts/secaudit.sh</code></td></tr>
+<tr><td>11</td><td style="background-color:#ffcccb"><code>tools/docgen.py</code></td><td style="background-color:#c1e1c1"><code>commands/docgen.md</code></td><td style="background-color:#c1e1c1"><code>scripts/docgen.sh</code></td></tr>
+<tr><td>12</td><td style="background-color:#ffcccb"><code>tools/apilookup.py</code></td><td style="background-color:#c1e1c1"><code>commands/apilookup.md</code></td><td style="background-color:#c1e1c1"><code>scripts/apilookup.sh</code></td></tr>
+<tr><td>13</td><td style="background-color:#ffcccb"><code>tools/challenge.py</code></td><td style="background-color:#c1e1c1"><code>commands/challenge.md</code></td><td style="background-color:#c1e1c1"><code>scripts/challenge.sh</code></td></tr>
+<tr><td>14</td><td style="background-color:#ffcccb"><code>tools/tracer.py</code></td><td style="background-color:#c1e1c1"><code>commands/tracer.md</code></td><td style="background-color:#c1e1c1"><code>scripts/tracer.sh</code></td></tr>
+<tr><td>15</td><td style="background-color:#ffcccb"><code>tools/clink.py</code></td><td style="background-color:#c1e1c1"><code>commands/clink.md</code></td><td style="background-color:#c1e1c1"><code>scripts/clink.sh</code></td></tr>
+<tr><td>16</td><td style="background-color:#ffcccb"><code>tools/precommit.py</code></td><td style="background-color:#c1e1c1"><code>commands/precommit.md</code></td><td style="background-color:#c1e1c1"><code>scripts/precommit.sh</code></td></tr>
+<tr><td>17</td><td style="background-color:#ffcccb"><code>tools/listmodels.py</code></td><td style="background-color:#c1e1c1"><code>commands/listmodels.md</code></td><td style="background-color:#c1e1c1"><code>scripts/listmodels.sh</code></td></tr>
+<tr><td>18</td><td style="background-color:#ffcccb"><code>tools/version.py</code></td><td style="background-color:#c1e1c1"><code>commands/version.md</code></td><td style="background-color:#c1e1c1"><code>scripts/version.sh</code></td></tr>
+</table>
 
-**Source:** [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server)
+*Source: [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server)*
 
 ## Pattern
 
