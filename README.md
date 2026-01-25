@@ -212,7 +212,7 @@ export CEREBRAS_API_KEY="..."
 [![Twitter][twitter]][twitter-url]
 
 <!-- BADGES -->
-[github]: https://img.shields.io/badge/skills--not--mcp-000000?style=for-the-badge
+[github]: https://img.shields.io/badge/skills--not--mcp-000000?style=for-the-badge&logo=github&logoColor=white
 [github-url]: https://github.com/vdutts7/skills-not-mcp
 [zsh-badge]: https://img.shields.io/badge/Zsh-000000?style=for-the-badge&logo=gnu-bash&logoColor=white
 [zsh-url]: https://www.zsh.org/
