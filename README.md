@@ -196,12 +196,12 @@ export CEREBRAS_API_KEY="..."
 
 | | provider | models | env |
 |:---:|----------|--------|-----|
-| <img src="assets/icons/providers/anthropic.webp" width="16"> | Anthropic | sonnet-4, opus-4 | `ANTHROPIC_API_KEY` |
-| <img src="assets/icons/providers/cerebras.webp" width="16"> | Cerebras | llama-3.3-70b, qwen-3-32b | `CEREBRAS_API_KEY` |
-| <img src="assets/icons/providers/ollama.webp" width="16"> | Ollama | qwen2.5-coder, llama, mistral | local |
-| <img src="assets/icons/providers/openai.webp" width="16"> | OpenAI | gpt-4o, o1, o3 | `OPENAI_API_KEY` |
-| <img src="assets/icons/providers/gemini.webp" width="16"> | Gemini | 2.0-flash | `GEMINI_API_KEY` |
-| <img src="assets/icons/providers/openrouter.webp" width="16"> | OpenRouter | any | `OPENROUTER_API_KEY` |
+| <img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/claude.webp" width="16"> | Anthropic | sonnet-4, opus-4 | `ANTHROPIC_API_KEY` |
+| <img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/cerebras.webp" width="16"> | Cerebras | llama-3.3-70b, qwen-3-32b | `CEREBRAS_API_KEY` |
+| <img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/ollama.webp" width="16"> | Ollama | qwen2.5-coder, llama, mistral | local |
+| <img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/chatgpt.webp" width="16"> | OpenAI | gpt-4o, o1, o3 | `OPENAI_API_KEY` |
+| <img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/gemini.webp" width="16"> | Gemini | 2.0-flash | `GEMINI_API_KEY` |
+| <img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/openrouter.webp" width="16"> | OpenRouter | any | `OPENROUTER_API_KEY` |
 
 ## Tools
 
