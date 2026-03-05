@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vdutts7/webp/main/macos-terminal.webp" alt="terminal" width="80" height="80" />
-<img src="https://raw.githubusercontent.com/vdutts7/webp/main/claude.webp" alt="skills" width="80" height="80" />
-<img src="https://raw.githubusercontent.com/vdutts7/webp/main/mcp.webp" alt="mcp" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/macos/macos-terminal.webp" alt="terminal" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/claude.webp" alt="skills" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/macos.webp" alt="mcp" width="80" height="80" />
 
 <h1 align="center">skills-not-mcp</h1>
 <p align="center"><i><b>80-90% fewer tokens with Skills + Shell vs MCP</b></i></p>
