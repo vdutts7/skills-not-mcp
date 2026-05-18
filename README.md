@@ -29,6 +29,8 @@
 
 ## About
 
+<---benefits of MCP --->
+
 **80-90% token savings** by replacing MCP with Skills + Shell scripts.
 
 18 MCP tools from [pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) converted to:
