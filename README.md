@@ -1,6 +1,7 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp//terminal.webp" alt="terminal" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/terminal.webp" alt="terminal" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/skill.webp" alt="skill" width="80" height="80" />
 <img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/claude.webp" alt="skills" width="80" height="80" />
 <img src="https://raw.githubusercontent.com/vdutts7/squircle/main/webp/mcp.webp" alt="mcp" width="80" height="80" />
 
